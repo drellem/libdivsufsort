@@ -1,3 +1,5 @@
+This is a fork of libdivsufsort using the zig build system. The link to the original can be found below.
+
 # libdivsufsort
 
 libdivsufsort is a software library that implements a lightweight suffix array construction algorithm.
