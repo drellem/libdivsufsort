@@ -14,12 +14,10 @@ pub fn build(b: *std.build.Builder) void {
         .optimize = optimize,
     });
 
-    const t = lib.target_info.target;
+    // const t = lib.target_info.target;
 
     
-    lib.addCSourceFiles(&generic_src_files, &.{
-        "-DBUILD_DIVSUFSORT64"
-    });
+    lib.addCSourceFiles(&generic_src_files, &.{});
 
     lib.defineCMacro("HAVE_STDLIB_H", "1");
     lib.defineCMacro("INLINE", "inline");
@@ -27,16 +25,6 @@ pub fn build(b: *std.build.Builder) void {
     
     lib.linkLibC();
 
-    switch (t.os.tag) {
-        .windows => {
-           
-        },
-        .macos => {
-            
-        },XS
-        else => {
-        },
-    }
     const config_header = b.addConfigHeader(.{
         .style = .{ .cmake = .{ .path = "include/config.h.cmake" } },
         }, .{
@@ -54,7 +42,7 @@ pub fn build(b: *std.build.Builder) void {
 
     const config_header2 = b.addConfigHeader(.{
         .style = .{ .cmake = .{ .path = "include/divsufsort.h.cmake" } },
-        .include_path = "divsufsort64.h",
+        .include_path = "divsufsort.h",
         }, .{
         .HAVE_INTTYPES_H = 1,
         .HAVE_STDDEF_H = 1,
@@ -64,7 +52,7 @@ pub fn build(b: *std.build.Builder) void {
         .HAVE_STRINGS_H = 1,
         .HAVE_MEMORY_H = 1,
         .HAVE_SYS_TYPES_H = 1,
-        .W64BIT = "64",
+        .W64BIT = "",
         .SAINDEX_TYPE = "long",
         .SAUCHAR_TYPE = "unsigned char",
         .SAINT32_TYPE = "int32_t",
