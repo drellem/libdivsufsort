@@ -9,7 +9,7 @@ pub fn build(b: *std.build.Builder) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const lib = b.addStaticLibrary(.{
-        .name = "libdivsufsort",
+        .name = "divsufsort",
         .target = target,
         .optimize = optimize,
     });
