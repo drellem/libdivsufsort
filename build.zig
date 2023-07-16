@@ -55,7 +55,7 @@ pub fn build(b: *std.build.Builder) void {
         .W64BIT = "",
         .SAINDEX_TYPE = "long",
         .SAUCHAR_TYPE = "unsigned char",
-        .SAINT32_TYPE = "int32_t",
+        .SAINT32_TYPE = "int",
         .SAINT64_TYPE = "long"
     });
     lib.addConfigHeader(config_header2);
