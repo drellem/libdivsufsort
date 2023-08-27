@@ -61,7 +61,7 @@ pub fn build(b: *std.build.Builder) void {
     lib.addConfigHeader(config_header2);
     lib.installConfigHeader(config_header2, .{});
     
-    lib.addIncludePath("include");
+    lib.addIncludePath(.{ .path = "include" });
     lib.installHeadersDirectory("include", "");
     b.installArtifact(lib);
 }

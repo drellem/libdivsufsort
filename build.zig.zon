@@ -1,0 +1,9 @@
+.{
+    // the name of your project
+    .name = "libdivsufsort",
+    // the version of your project
+    .version = "0.0.4",
+
+    // the actual packages you need as dependencies of your project 
+    .dependencies = .{}
+}
